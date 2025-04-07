@@ -71,19 +71,6 @@ public partial class Form1 : Form
         listBoxItems.Items.Add($"{orderDetail.ItemName} - Số lượng: {orderDetail.Quantity} - Giá: {orderDetail.Price}");
     }
 
-    private void BtnPlaceOrder_Click(object sender, EventArgs e)
-    {
-        if (!int.TryParse(txtCustomerId.Text, out int customerId))
-        {
-            MessageBox.Show("Vui lòng nhập Customer ID hợp lệ");
-            return;
-        }
-
-        var controller = new OrderController(_context);
-        string result = controller.PlaceOrder(customerId, orderDetails);
-        MessageBox.Show(result);
-        orderDetails.Clear();
-        listBoxItems.Items.Clear();
-        }
+    
     }
 }
