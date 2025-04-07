@@ -51,6 +51,11 @@ namespace Payment
                 return;
             }
 
+
+
+            //thêm 
+
+
             var controller = new PaymentController(new AppDbContext(), new MockPaymentGateway());
             string result = controller.ProcessPayment(orderId, paymentMethod);
             MessageBox.Show(result);
